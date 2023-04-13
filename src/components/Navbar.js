@@ -24,11 +24,11 @@ export default function Navbar(props) {
     props.change("User Specific");
   }
 
-  if (!props.login_staus) {
-    document.querySelector(".usersection").innerHTML = "Login";
-  } else {
-    document.querySelector(".usersection").innerHTML = "User Specific";
-  }
+  // if (!props.login_staus) {
+  //   document.querySelector(".usersection").innerHTML = "Login";
+  // } else {
+  //   document.querySelector(".usersection").innerHTML = "User Specific";
+  // }
 
   return (
     <div className="Navbar">
