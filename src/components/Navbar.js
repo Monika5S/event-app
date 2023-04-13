@@ -2,13 +2,25 @@ import React from "react";
 import "./Components.css";
 
 export default function Navbar(props) {
+  function changeColor(e, section) {
+    if (section === "Global") {
+      document.querySelector(".active").classList.remove("active");
+    }
+    if (section === "User") {
+      document.querySelector(".active").classList.remove("active");
+    }
+    e.target.parentElement.classList.add("active");
+  }
+
   function navigateGlobal(e) {
     e.preventDefault();
+    changeColor(e, "Global");
     props.change("Global");
   }
 
   function navigateUserSpecific(e) {
     e.preventDefault();
+    changeColor(e, "User");
     props.change("User Specific");
   }
 

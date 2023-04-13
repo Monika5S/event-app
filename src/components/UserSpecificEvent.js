@@ -4,6 +4,7 @@ import "./Components.css";
 
 // Displays user specific events and adds new events to the both global and this section
 export default function UserSpecificEvent(props) {
+  let [login_status, setLoginStaus] = useState(false);
   let [formdata, setFormData] = useState();
   let [image, setImage] = useState(null);
   let [user_events, setUserEvents] = useState([
@@ -38,75 +39,141 @@ export default function UserSpecificEvent(props) {
     props.add_events([...props.global_events, formdata]);
   }
 
-  return (
-    <div className="UserSpecificEvent">
-      <h1 className="text-start pt-5 pb-5">User Specific Events</h1>
-      {/* <img src={image} alt="prev" /> */}
-      {user_events.map((events) => {
-        return <EventContent event_data={events} />;
-      })}
+  function Authorise(e) {
+    e.preventDefault();
+    console.log("Authorised");
+  }
 
-      {/* form to add events */}
-      <div className="mt-5">
-        <h2>Add Events</h2>
-        <form className="mt-3" onSubmit={handleSubmit}>
-          <div className="form-group mb-3">
-            <label for="event_name">Event Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="event_name"
-              placeholder="Enter event name"
-            />
-          </div>
-          <div className="form-group mb-3">
-            <label for="event_date">Event Date</label>
-            <input
-              type="datetime-local"
-              className="form-control"
-              id="event_date"
-              placeholder="Enter event date"
-            />
-          </div>
-          <div className="form-group mb-3">
-            <label for="event_location">Event Location</label>
-            <input
-              type="text"
-              className="form-control"
-              id="event_location"
-              placeholder="Enter event location (city, country)"
-            />
-          </div>
-          <div className="form-group mb-3">
-            <label for="event_price">Event Price</label>
-            <input
-              type="number"
-              className="form-control"
-              id="event_price"
-              placeholder="Enter event price"
-            />
-          </div>
-          <div className="form-group mb-4">
-            <label for="event_image">Event Image</label>
-            <input
-              type="file"
-              accept="image/*"
-              className="form-control"
-              id="event_image"
-              placeholder="Enter event image"
-              onChange={onImageChange}
-            />
-          </div>
-          <div className="d-flex justify-content-between">
-            <button type="reset" className="btn btn-secondary py-2 px-4">
-              Reset
+  if (login_status === false) {
+    return (
+      <div className="mt-5 row">
+        <div className="col-md-6 p-3 pe-5">
+          <h2>Register</h2>
+          <form className="mt-3" onSubmit={Authorise}>
+            <div className="form-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="username"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="password"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="confirm password"
+              />
+            </div>
+            <button className="btn btn-primary py-2 px-3">Register</button>
+          </form>
+        </div>
+
+        <div className="col-md-6 p-3 ps-5">
+          <h3>Login</h3>
+          <form className="mt-3" onSubmit={Authorise}>
+            <div className="form-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="username"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="password"
+              />
+            </div>
+
+            <button
+              className="btn btn-primary py-2 px-3"
+              onClick={() => setLoginStaus(true)}
+            >
+              Login
             </button>
-            <button type="submit" className="btn btn-primary py-2 px-3">
-              Submit
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="UserSpecificEvent">
+        <h1 className="text-start pt-5 pb-5">User Specific Events</h1>
+        {/* <img src={image} alt="prev" /> */}
+        {user_events.map((events) => {
+          return <EventContent event_data={events} />;
+        })}
+
+        {/* form to add events */}
+        <div className="mt-5">
+          <h2>Add Events</h2>
+          <form className="mt-3" onSubmit={handleSubmit}>
+            <div className="form-group mb-3">
+              <label for="event_name">Event Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="event_name"
+                placeholder="Enter event name"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label for="event_date">Event Date</label>
+              <input
+                type="datetime-local"
+                className="form-control"
+                id="event_date"
+                placeholder="Enter event date"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label for="event_location">Event Location</label>
+              <input
+                type="text"
+                className="form-control"
+                id="event_location"
+                placeholder="Enter event location (city, country)"
+              />
+            </div>
+            <div className="form-group mb-3">
+              <label for="event_price">Event Price</label>
+              <input
+                type="number"
+                className="form-control"
+                id="event_price"
+                placeholder="Enter event price"
+              />
+            </div>
+            <div className="form-group mb-4">
+              <label for="event_image">Event Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="form-control"
+                id="event_image"
+                placeholder="Enter event image"
+                onChange={onImageChange}
+              />
+            </div>
+            <div className="d-flex justify-content-between">
+              <button type="reset" className="btn btn-secondary py-2 px-4">
+                Reset
+              </button>
+              <button type="submit" className="btn btn-primary py-2 px-3">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
