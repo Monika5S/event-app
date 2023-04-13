@@ -41,7 +41,7 @@ export default function UserSpecificEvent(props) {
   return (
     <div className="UserSpecificEvent">
       <h1 className="text-start pt-5 pb-5">User Specific Events</h1>
-      <img src={image} alt="prev" />
+      {/* <img src={image} alt="prev" /> */}
       {user_events.map((events) => {
         return <EventContent event_data={events} />;
       })}
