@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import EventContent from "./EventContent";
+import Login from "./Login";
+import Register from "./Register";
 import "./Components.css";
 
 // Displays user specific events and adds new events to the both global and this section
@@ -39,67 +41,17 @@ export default function UserSpecificEvent(props) {
     props.add_events([...props.global_events, formdata]);
   }
 
-  function Authorise(e) {
-    e.preventDefault();
-    console.log("Authorised");
-  }
-
   if (login_status === false) {
     return (
-      <div className="mt-5 row">
+      <div className="mt-5 mb-5 row">
         <div className="col-md-6 p-3 pe-5">
           <h2>Register</h2>
-          <form className="mt-3" onSubmit={Authorise}>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="username"
-              />
-            </div>
-            <div className="form-group mb-3">
-              <input
-                type="password"
-                className="form-control"
-                placeholder="password"
-              />
-            </div>
-            <div className="form-group mb-3">
-              <input
-                type="password"
-                className="form-control"
-                placeholder="confirm password"
-              />
-            </div>
-            <button className="btn btn-primary py-2 px-3">Register</button>
-          </form>
+          <Register />
         </div>
 
         <div className="col-md-6 p-3 ps-5">
           <h3>Login</h3>
-          <form className="mt-3" onSubmit={Authorise}>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="username"
-              />
-            </div>
-            <div className="form-group mb-3">
-              <input
-                type="password"
-                className="form-control"
-                placeholder="password"
-              />
-            </div>
-
-            <button
-              className="btn btn-primary py-2 px-3"
-              onClick={() => setLoginStaus(true)}
-            >
-              Login
-            </button>
-          </form>
+          <Login login_staus={login_status} setLoginStaus={setLoginStaus} />
         </div>
       </div>
     );
