@@ -1,0 +1,63 @@
+.Navbar {
+    width: 100%;
+    background: #f2f2ff;
+    box-shadow: 0 0 5px grey;
+    font-size: 16px;
+    font-weight: 500;
+    position: fixed;
+}
+
+.Navbar nav {
+    padding: 10px 90px;
+}
+
+.Navbar a {
+    text-decoration: none;
+    color: rgb(89, 88, 88);
+}
+
+.Navbar a:hover {
+    text-decoration: underline rgb(89, 88, 88);
+}
+
+.Navbar .active a {
+    color: blueviolet;
+}
+
+.Navbar ul {
+    margin: 0;
+}
+
+.Navbar ul li {
+    display: inline;
+    list-style: none;
+    line-height: 1.5;
+    padding-left: 30px;
+}
+
+.GlobalEvent i {
+    width: auto;
+    color: white;
+    text-shadow: 0 0 2px #000000;
+    font-size: 24px;
+}
+
+i:hover {
+    color: red;
+}
+
+.Navbar .logo {
+    max-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.GlobalEvent h2 {
+    color: #000000;
+}
+
+.GlobalEvent .event-details {
+    color: rgb(89, 88, 88);
+    line-height: 0.7;
+    font-weight: 500;
+}

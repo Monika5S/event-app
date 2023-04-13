@@ -1,19 +1,36 @@
 import React from "react";
-import "./Navbar.css";
+import "./Components.css";
 
-export default function Navbar() {
-  // onclick event handler
+export default function Navbar(props) {
+  function navigateGlobal(e) {
+    e.preventDefault();
+    props.change("Global");
+  }
+
+  function navigateUserSpecific(e) {
+    e.preventDefault();
+    props.change("User Specific");
+  }
 
   return (
     <div className="Navbar">
-      <nav>
-        <p>Events</p>
+      <nav class="d-flex justify-content-between align-items-center">
+        <img
+          src="https://images.pexels.com/photos/380337/pexels-photo-380337.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="logo"
+          class="w-25 logo"
+        />
         <ul>
           <li className="active">
-            <a href="#">Global</a>
+            <a href="#" onClick={navigateGlobal}>
+              Global
+            </a>
           </li>
+
           <li>
-            <a href="#">User Specific</a>
+            <a href="#" onClick={navigateUserSpecific}>
+              User Specific
+            </a>
           </li>
         </ul>
       </nav>

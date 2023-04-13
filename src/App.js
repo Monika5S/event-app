@@ -1,14 +1,10 @@
 import "./App.css";
-import GlobalEvent from "./components/GlobalEvent";
-import Header from "./components/Navbar";
+import Events from "./components/Events";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="container">
-        <GlobalEvent />
-      </div>
+      <Events />
     </div>
   );
 }
