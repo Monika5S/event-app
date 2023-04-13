@@ -24,6 +24,12 @@ export default function Navbar(props) {
     props.change("User Specific");
   }
 
+  if (!props.login_staus) {
+    document.querySelector(".usersection").innerHTML = "Login";
+  } else {
+    document.querySelector(".usersection").innerHTML = "User Specific";
+  }
+
   return (
     <div className="Navbar">
       <nav class="d-flex justify-content-between align-items-center">
@@ -34,13 +40,13 @@ export default function Navbar(props) {
         />
         <ul>
           <li className="active">
-            <a href="#" onClick={navigateGlobal}>
+            <a href="/" onClick={navigateGlobal}>
               Global
             </a>
           </li>
 
           <li>
-            <a href="#" onClick={navigateUserSpecific}>
+            <a href="/" onClick={navigateUserSpecific} className="usersection">
               User Specific
             </a>
           </li>

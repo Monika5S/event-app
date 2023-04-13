@@ -29,21 +29,27 @@ export default function Events() {
 
   // State to change the navigation page between Global and User Specific handled using the Navbar component
   let [navigation_page, setNavigationPage] = useState("Global");
+  let [login_status, setLoginStaus] = useState(false);
 
   // Returning the navbar and the event page based on the navigation_page state
   if (navigation_page === "User Specific") {
     return (
       <div className="Events">
-        <Navbar change={setNavigationPage} />
+        <Navbar change={setNavigationPage} login_staus={login_status} />
         <div className="container">
-          <UserSpecificEvent add_events={setEvents} global_events={events} />
+          <UserSpecificEvent
+            add_events={setEvents}
+            global_events={events}
+            login_status={login_status}
+            setLoginStaus={setLoginStaus}
+          />
         </div>
       </div>
     );
   } else {
     return (
       <div className="Events">
-        <Navbar change={setNavigationPage} />
+        <Navbar change={setNavigationPage} login_staus={login_status} />
         <div className="container">
           <GlobalEvent all_events={events} />
         </div>

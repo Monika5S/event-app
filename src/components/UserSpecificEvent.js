@@ -6,7 +6,6 @@ import "./Components.css";
 
 // Displays user specific events and adds new events to the both global and this section
 export default function UserSpecificEvent(props) {
-  let [login_status, setLoginStaus] = useState(false);
   let [formdata, setFormData] = useState();
   let [image, setImage] = useState(null);
   let [user_events, setUserEvents] = useState([
@@ -41,7 +40,7 @@ export default function UserSpecificEvent(props) {
     props.add_events([...props.global_events, formdata]);
   }
 
-  if (login_status === false) {
+  if (props.login_status === false) {
     return (
       <div className="mt-5 mb-5 row">
         <div className="col-md-6 p-3 pe-5">
@@ -51,7 +50,10 @@ export default function UserSpecificEvent(props) {
 
         <div className="col-md-6 p-3 ps-5">
           <h3>Login</h3>
-          <Login login_staus={login_status} setLoginStaus={setLoginStaus} />
+          <Login
+            login_staus={props.login_status}
+            setLoginStaus={props.setLoginStaus}
+          />
         </div>
       </div>
     );
