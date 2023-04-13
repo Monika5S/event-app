@@ -30,9 +30,9 @@ export default function EventContent(props) {
           <p>starts at ${props.event_data.event_price}</p>
         </div>
         <div className="row d-flex justify-content-md-end justify-content-center">
-          <i class="fa-solid fa-arrow-up-from-bracket text-info"></i>
+          <i className="fa-solid fa-arrow-up-from-bracket text-info"></i>
           <i
-            class="fa-solid fa-heart"
+            className="fa-solid fa-heart"
             onClick={(e) => {
               likeEvent(e, props.event_data.is_liked);
             }}

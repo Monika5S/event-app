@@ -7,7 +7,7 @@ export default function Login(props) {
   }
 
   return (
-    <div>
+    <div className="Login">
       <form className="mt-3" onSubmit={Authorise}>
         <div className="form-group mb-3">
           <input type="text" className="form-control" placeholder="username" />

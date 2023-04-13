@@ -6,7 +6,7 @@ export default function Register() {
     // const username = e.target.elements.username.value;
     const password = e.target.elements.password.value;
     const confirmPassword = e.target.elements.confirmPassword.value;
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("passwords do not match, please try again!");
     } else {
       alert("user registered successfully!");

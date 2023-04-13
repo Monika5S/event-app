@@ -32,11 +32,11 @@ export default function Navbar(props) {
 
   return (
     <div className="Navbar">
-      <nav class="d-flex justify-content-between align-items-center">
+      <nav className="d-flex justify-content-between align-items-center">
         <img
           src="https://images.pexels.com/photos/380337/pexels-photo-380337.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="logo"
-          class="w-25 logo"
+          className="w-25 logo"
         />
         <ul>
           <li className="active">
