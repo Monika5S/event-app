@@ -1,3 +1,16 @@
+<h2>Event-App-Frontend-Design</h2>
+<h5>Global Event Screen</h5>
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/861/original/event-app-1.jpg?1681409194" />
+
+<h5>User Specific Screen</h5>
+<h6>Login/Register</h6>
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/863/original/event-app-2.jpg?1681409226" />
+
+<h6>Add Events/View User Specific Events</h6>
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/076/862/original/event-app-3.jpg?1681409211"/>
+
+<hr />
+<br />
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
