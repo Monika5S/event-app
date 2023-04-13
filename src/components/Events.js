@@ -36,7 +36,7 @@ export default function Events() {
       <div className="Events">
         <Navbar change={setNavigationPage} />
         <div className="container">
-          <UserSpecificEvent add_events={setEvents} />
+          <UserSpecificEvent add_events={setEvents} global_events={events} />
         </div>
       </div>
     );
